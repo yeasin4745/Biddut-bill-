@@ -1,0 +1,93 @@
+<html>
+
+  <head>
+     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    
+  </head>
+  <body>
+     <div class="container">
+  <div class="input-section">
+   <h2 style="color: #333; text-align: center;">বিদ্যুৎ বিল ক্যালকুলেটর</h2>
+   <input type="number" id="Unit" placeholder="আপনার ইউনিট লিখুন" min="0">
+   <button type="submit" onclick="calculateBill()">হিসাব করুন</button>
+  </div>
+  
+  <table>
+   <tr>
+    <th id="title" colspan="4">ধাপ অনুযায়ী বিদ্যুৎ ব্যবহারে বিবরণ</th>
+   </tr>
+   
+   <tr class="head">
+    <td>ধাপ</td>
+    <td>মূল্যহার (Tk/kWh)</td>
+    <td>বিদ্যুৎ ব্যবহার (kWh)</td>
+    <td>এনার্জি চার্জ (Tk)</td>
+   </tr>
+   
+   <tr>
+    <td>লাইফ লাইন [0-50]</td>
+    <td>4.63</td>
+    <td id="lifeUnit">0</td>
+    <td id="lifeTk">0.00</td>
+   </tr>
+   
+   <tr>
+    <td>প্রথম [51-75]</td>
+    <td>5.26</td>
+    <td id="firstUnit">0</td>
+    <td id="firstTk">0.00</td>
+   </tr>
+   
+   <tr>
+    <td>দ্বিতীয় [76-200]</td>
+    <td>7.20</td>
+    <td id="secondUnit">0</td>
+    <td id="secondTk">0.00</td>
+   </tr>
+   
+   <tr>
+    <td>তৃতীয় [201-300]</td>
+    <td>7.59</td>
+    <td id="thirdUnit">0</td>
+    <td id="thirdTk">0.00</td>
+   </tr>
+   
+   <tr>
+    <td>চতুর্থ [301-400]</td>
+    <td>8.02</td>
+    <td id="fourUnit">0</td>
+    <td id="fourTK">0.00</td>
+   </tr>
+   
+   <tr>
+    <td>পঞ্চম [401-600]</td>
+    <td>12.67</td>
+    <td id="fiveUnit">0</td>
+    <td id="fiveTk">0.00</td>
+   </tr>
+   
+   <tr>
+    <td>ষষ্ঠ [601+]</td>
+    <td>14.61</td>
+    <td id="sixUnit">0</td>
+    <td id="sixTk">0.00</td>
+   </tr>
+   
+   <tr class="total-row">
+    <td colspan="3"><strong>মোট এনার্জি চার্জ</strong></td>
+    <td id="totalCharge"><strong>0.00</strong></td>
+   </tr>
+  </table>
+  
+  <div class="summary" id="summary" style="display: none;">
+   <h3>বিল সারাংশ</h3>
+   <div>মোট ইউনিট: <span id="totalUnits">0</span> kWh</div>
+   <div>এনার্জি চার্জ: <span id="energyCharge">0.00</span> টাকা</div>
+   <div>ভ্যাট (৫%): <span id="vat">0.00</span> টাকা</div>
+   <div class="total-amount">মোট বিল: <span id="finalTotal">0.00</span> টাকা</div>
+  </div>
+ </div>
+
+    <script src='app.js'></script>
+  </body>
+</html>
